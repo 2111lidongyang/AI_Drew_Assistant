@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="img">
+    <file>img/Vector_2.png</file>
+    <file>img/Desktop_-_4.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platform AI</title>
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <div class="top">
+    <div class="wrapper">
+      <div class="logo">
+        <!-- 首页 -->
+        <h1><a href="#">Platform AI</a></h1>
+      </div>
+      <div class="middle">
+        <div class="txt">
+          <span class="title"><a href="#">首页</a></span>
+        </div>
+        <div class="txt">
+          <span class="title"><a class="dataManage" href="./index.html">后台管理</a></span>
+        </div>
+        <div class="txt">
+          <span class="title"><a class="dataManage active"" href=" ./view.html">图片广场</a></span>
+        </div>
+      </div>
+      <div class="right">
+        <!-- 管理员入口 -->
+        <!-- <span class="manager"><a href="#">管理入口</a></span> -->
+        <!-- 会议主持人入口 -->
+        <div class="host"><a href="#">退出登录</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="sp">
+    <div class="sp_top">
+      <div class="sp_top_title">platformAI : looking</div>
+      <div class="sp_top_container" id="container"></div>
+    </div>
+  </div>
+  </div>
+</body>
+<style>
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      PingFangSC-Regular,
+      "PingFang SC",
+      "Microsoft YaHei",
+      "Helvetica Neue",
+      Helvetica,
+      Arial,
+      sans-serif;
+    font-size: 14px;
+    color: #40404c;
+  }
+
+  a {
+    color: #40404c;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #fc5832;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  .container {
+    width: 1080px;
+    margin: 0 auto;
+  }
+
+  button,
+  input {
+    resize: none;
+  }
+
+  .sp {
+    text-align: center;
+    width: 100%;
+    height: 850px;
+
+  }
+
+  .sp_top {
+    width: 100%;
+    height: 50px;
+    background-color: #ff4400;
+  }
+
+  .sp_top_title {
+    line-height: 50px;
+    color: #fff;
+    font-size: 30px;
+  }
+
+  .sp_top_container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+
+  .look {
+    width: calc(100% / 3);
+  }
+
+
+
+
+  .container_1 {
+    width: 50%;
+    height: 100%;
+    /* background-color: pink; */
+    border-right: 3px solid #ff4400;
+    position: relative;
+  }
+
+  .container_img {
+    margin-top: 200px;
+    width: 50%;
+  }
+
+  .container_img_1 {
+    position: absolute;
+    left: 80px;
+    bottom: 0px;
+  }
+
+  .look img {
+    width: 80%;
+    height: 80%;
+  }
+
+
+  .container_2 {
+    width: 50%;
+    height: 100%;
+    position: relative;
+  }
+
+  .container_div {
+    width: 400px;
+    height: 400px;
+    /* background-color: pink; */
+    position: absolute;
+    top: 200px;
+    left: 200px;
+  }
+
+  .container_2_text {
+    font-size: 18px;
+    color: #FF4400;
+    width: 100%;
+    height: 100px;
+    /* background-color: palegoldenrod; */
+    position: relative;
+  }
+
+  .name {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-bottom: 10px;
+  }
+
+  .fg {
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    width: 250px;
+    height: 40px;
+    border: 1px solid #d7d7d7;
+  }
+
+  .fg_1 {
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    width: 250px;
+    height: 40px;
+    border: 1px solid #d7d7d7;
+    box-shadow: 2px 2px 4px rgba(255, 68, 0, 0.3);
+    border-radius: 10px;
+  }
+
+  .weight {
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    display: flex;
+  }
+
+  .height {
+    position: absolute;
+    top: 40px;
+    left: 150px;
+    display: flex;
+  }
+
+  .weight_name {
+    margin-right: 10px;
+    color: #000;
+  }
+
+  .btn {
+    width: 260px;
+    height: 60px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 30px;
+    line-height: 60px;
+    margin-left: 10px;
+    background-color: #FF4400;
+  }
+
+  /* 主页背景色 */
+  body {
+    background-color: #f3f5f7;
+  }
+
+  .top {
+    background-color: #fff;
+  }
+
+  /* 导航栏 */
+  .wrapper {
+    display: flex;
+    margin: 0 auto;
+    width: 1200px;
+    height: 100px;
+    align-items: center;
+    /* background-color: #fff; */
+    justify-content: space-between;
+  }
+
+  /* logo  */
+  .top .logo {
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+
+  }
+
+  .top .logo h1 a {
+    color: #ff4400;
+    font-size: 32px;
+    line-height: 100px;
+  }
+
+  /* 中间内容 */
+  .middle {
+    display: flex;
+    text-align: center;
+    line-height: 100px;
+    font-size: 20px;
+    color: #333;
+  }
+
+  .middle .txt {
+    height: 100px;
+    /* background-color: aquamarine; */
+  }
+
+  .middle .txt .title {
+    margin: 0 16px;
+  }
+
+
+  .middle .txt .title .active,
+  .middle .txt .title a:hover {
+    color: #ff4400;
+    border-bottom: 2px solid #ff4400;
+  }
+
+  /* 入口 */
+  .right {
+    width: 152px;
+    height: 42px;
+    display: flex;
+    font-size: 16px;
+    text-align: center;
+    line-height: 42px;
+  }
+
+  /* 管理入口 */
+  .right span {
+    margin-right: 24px;
+  }
+
+  .right span a:hover {
+    color: #ff4400;
+  }
+
+  /* 登录 */
+  .right .host {
+    width: 128px;
+    background-color: #ff4400;
+    border-radius: 8px;
+  }
+
+  .right .host a {
+    color: #fff;
+  }
+
+  .right .host:hover {
+    background-color: #4087f7;
+  }
+</style>
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/1.2.0/axios.min.js"></script>
+<script>
+  document.querySelector('.dataManage').addEventListener('click', (event) => {
+    const value = localStorage.getItem("identity")
+    console.log(value)
+    if (value === '1') {
+      alert('没有权限')
+      event.preventDefault(); // 阻止默认行为（跳转）
+    }
+  })
+  function getValues() {
+    const style = document.getElementById("styleSelect").value;
+    const description = document.getElementById("descriptionInput").value;
+    const width = document.getElementById("widthSelect").value;
+    const height = document.getElementById("heightSelect").value;
+    alert("风格：" + style + "描述：" + description + "宽度：" + width + "高度：" + height);
+    axios({
+      url: '#',
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      data: {
+        fengge: style,
+        content: description,
+        width,
+        height,
+      }
+    }).then((res) => {
+      console.log(res)
+      if (res.data.msg === true) {
+        alert('准确')
+      }
+      document.querySelector('.container_img').src = res.data.avatar_url
+    })
+  }
+
+  axios({
+    url: '#',
+    method: 'GET',
+    headers: {
+      'accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+  }).then((res) => {
+    console.log(res)
+    console.log(res.data.data)
+    const array = res.data.data
+    const arrayText = array.map((item, index) => {
+      return `
+      <div class="look">
+          <img src="${item[0]}" alt="二次元未来初音">
+          <div class="imgName">${item[1]}</div>
+        </div>
+      `
+    })
+    console.log(arrayText)
+    const container = document.getElementById('container')
+    container.innerHTML = arrayText.join('')
+  })
+
+</script>
+
+</html>
